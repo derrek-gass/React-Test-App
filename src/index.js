@@ -112,6 +112,16 @@ const Footer = ({ copyRight }) => (
   </footer>
 )
 
+const ArrayContainer = () => {
+  return (
+  <div className='container'>
+    <div>
+      <h1>Numbers List</h1>
+      {[1, 2, 3, 4, 5]}
+    </div>
+  </div>)
+}
+
 // The App, or the parent or the container component
 // Functional Component
 const App = () => {
@@ -146,6 +156,7 @@ const App = () => {
         handleTime={handleTime}
         greetPeople={greetPeople}
       />
+      <ArrayContainer/>
       <Footer copyRight={date} />
     </div>
   )
