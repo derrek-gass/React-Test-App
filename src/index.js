@@ -112,14 +112,9 @@ const Footer = ({ copyRight }) => (
   </footer>
 )
 
-const ArrayContainer = () => {
-  return (
-  <div className='container'>
-    <div>
-      <h1>Numbers List</h1>
-      {[1, 2, 3, 4, 5]}
-    </div>
-  </div>)
+const Numbers = ({numbers}) => {
+  const list = numbers.map((number) => <li key={number}>{number}</li>)
+  return list
 }
 
 // The App, or the parent or the container component
@@ -146,7 +141,7 @@ const App = () => {
   const greetPeople = () => {
     alert('Welcome to 30 Days Of React Challenge, 2020')
   }
-
+  const numbers = [1, 2, 3, 4, 5]
   return (
     <div className='app'>
       <Header data={data} />
@@ -156,7 +151,7 @@ const App = () => {
         handleTime={handleTime}
         greetPeople={greetPeople}
       />
-      <ArrayContainer/>
+      <Numbers numbers={numbers}/>
       <Footer copyRight={date} />
     </div>
   )
