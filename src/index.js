@@ -119,42 +119,47 @@ const Numbers = ({numbers}) => {
 
 // The App, or the parent or the container component
 // Functional Component
-const App = () => {
-  const data = {
-    welcome: 'Welcome to 30 Days Of React',
-    title: 'Getting Started React',
-    subtitle: 'JavaScript Library',
-    author: {
-      firstName: 'Derrek',
-      lastName: 'Gass',
-    },
-    date: new Date(), // date needs to be formatted to a human readable format
+class App extends React.Component {
+  constructor(props) {
+    super(props);
   }
-  const date = new Date()
-  const techs = ['HTML', 'CSS', 'JavaScript']
-  // copying the author from data object to user variable using spread operator
-  const user = { ...data.author, image: derrekImage }
+  render() {
+    const data = {
+      welcome: "Welcome to 30 Days Of React",
+      title: "Getting Started React",
+      subtitle: "JavaScript Library",
+      author: {
+        firstName: "Ivy",
+        lastName: "Abchal",
+      },
+      date: new Date(), // date needs to be formatted to a human readable format
+    };
+    const date = new Date();
+    const techs = ["HTML", "CSS", "JavaScript"];
+    // copying the author from data object to user variable using spread operator
+    const user = { ...data.author, image: derrekImage };
 
-  const handleTime = () => {
-    alert(showDate(new Date()))
+    const handleTime = () => {
+      alert(showDate(new Date()));
+    };
+    const greetPeople = () => {
+      alert("Welcome to 30 Days Of React Challenge, 2020");
+    };
+    const numbers = [1, 2, 3, 4, 5];
+    return (
+      <div className="app">
+        <Header data={data} />
+        <Main
+          user={user}
+          techs={techs}
+          handleTime={handleTime}
+          greetPeople={greetPeople}
+        />
+        <Numbers numbers={numbers} />
+        <Footer copyRight={date} />
+      </div>
+    );
   }
-  const greetPeople = () => {
-    alert('Welcome to 30 Days Of React Challenge, 2020')
-  }
-  const numbers = [1, 2, 3, 4, 5]
-  return (
-    <div className='app'>
-      <Header data={data} />
-      <Main
-        user={user}
-        techs={techs}
-        handleTime={handleTime}
-        greetPeople={greetPeople}
-      />
-      <Numbers numbers={numbers}/>
-      <Footer copyRight={date} />
-    </div>
-  )
 }
 const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)
