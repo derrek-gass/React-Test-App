@@ -220,7 +220,7 @@ class App extends React.Component {
     const data = {
       welcome: 'Welcome to 30 Days Of React',
       title: 'Getting Started React',
-      subtitle: 'JavaScript Library',
+      subtitle: 'JavaScript Framework',
       author: {
         firstName: 'Derrek',
         lastName: 'Gass',
