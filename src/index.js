@@ -98,7 +98,7 @@ const Count = ({ count, addOne, minusOne }) => (
     </div>
   </div>
 )
-
+// test
 // TechList Component
 // class base component
 class TechList extends React.Component {
