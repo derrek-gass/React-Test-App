@@ -53,7 +53,7 @@ const buttonStyles = {
   borderRadius: 5,
   margin: 3,
   cursor: 'pointer',
-  fontSize: 16,
+  fontSize: 18,
   color: 'white',
 }
 
